@@ -3,6 +3,7 @@
 import 'dart:ui';
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/final_result.dart';
+import 'package:bmi_calculator/resultBrain.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:flutter/material.dart';
 import 'reusableCard.dart';
@@ -246,9 +247,15 @@ class _HomePageState extends State<HomePage> {
             margin: const EdgeInsets.all(10.0),
             child: TextButton(
                 onPressed: (){
+                  ResultBrain res = ResultBrain(height: height, weight: weight);
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context)=>Final_result())
+                    MaterialPageRoute(builder: (context)=>FinalResult(
+                      output: res.CalculateResult(),
+                      bmi: res.CalculateBMI(),
+                      interpetetion: res.CalculateInterpetetion(),
+                    )
+                    )
                     );
                 },
                 child: Text('CALCULATE',

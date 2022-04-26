@@ -5,8 +5,13 @@ import 'reusableCard.dart';
 
 import 'constants.dart';
 
-class Final_result extends StatelessWidget {
-  const Final_result({Key? key}) : super(key: key);
+class FinalResult extends StatelessWidget {
+
+  FinalResult({required this.output,required this.bmi,required this.interpetetion});
+
+  final String output;
+  final String bmi;
+  final String interpetetion;
 
   @override
   Widget build(BuildContext context) {
@@ -53,19 +58,19 @@ class Final_result extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('Normal',
+                Text(output,
                 style: TextStyle(
                   fontSize: 25.0,
                   color: Colors.green,
                 ),
                 ),
-                Text('18.3',
+                Text(bmi,
                 style: TextStyle(
                   fontSize: 100.0,
                   fontWeight: FontWeight.w900,
                 ),
                 ),
-                Text('Your BMI result is quite low. You should eat more!',
+                Text(interpetetion,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
