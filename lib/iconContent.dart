@@ -25,7 +25,7 @@ class IconContent extends StatelessWidget {
           ),
           Text(
             gender,
-            style: labelTextStyle,
+            style: klabelTextStyle,
           ),
         ],
       ),
